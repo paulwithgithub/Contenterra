@@ -50,7 +50,7 @@ const Home = () => {
     {apiStatus === 'LOADING'  ? 
      <Box sx={{height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
      <CircularProgress style={{color: '#865d36'}}/>
- </Box>:
+      </Box>:
     <Stack style={{backgroundColor: '#3e362e', paddingTop: 10, paddingLeft: 10}}>
     <Masonry columns={{ xs: 1, sm: 2, lg: 3, xl: 4 }} spacing={3}>
       {data.slice(1).map((each) => (

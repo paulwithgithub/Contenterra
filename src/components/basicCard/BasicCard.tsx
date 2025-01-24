@@ -32,7 +32,6 @@ const BasicCard = ({
   return (
     <div
       ref={cardRef}
-      id="main"
       style={{
         padding: "10px 15px",
         backgroundColor: "#ac8968",
@@ -43,7 +42,7 @@ const BasicCard = ({
         // maxHeight: isSeeingMore ? "none" : "401px",
         overflowY: "hidden",
         textOverflow: 'ellipsis',
-        transition: "0.5s",
+        // transition: "0.5s",
         paddingBottom: isOverflow ? "50px" : "none",
       }}
     >
@@ -56,8 +55,6 @@ const BasicCard = ({
         }}
       >
       <h1 style={{ fontSize: "20px",  }}>{title ?? ""}</h1>
-
-      
         <a href={url} target="_blank">
         
           <OpenInNewIcon style={{fontSize: 15, color: '#001002', marginTop: 20}}/>
@@ -101,6 +98,8 @@ const BasicCard = ({
             borderRadius: 10,
             padding: '0px 10px'
           }}
+      id="main"
+
         >
           <p style={{ textAlign: "center", fontSize: 12, color: '#000' }}>
             {isSeeingMore ? "Show Less" : "Show More"}
