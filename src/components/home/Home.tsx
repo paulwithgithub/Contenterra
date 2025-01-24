@@ -53,9 +53,8 @@ const Home = () => {
       </Box>:
     <Stack style={{backgroundColor: '#3e362e', paddingTop: 10, paddingLeft: 10}}>
         marginTop: 50,
-    <Masonry columns={{ xs: 1, sm: 2, lg: 3, xl: 4 }} spacing={3} style={{
+    <Masonry columns={{ xs: 1, sm: 2, lg: 3, xl: 4 }} spacing={2} style={{
         marginTop: 45,
-
     }}>
       {data.slice(1).map((each) => (
         <BasicCard info={each} />
