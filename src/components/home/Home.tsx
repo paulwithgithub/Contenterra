@@ -1,7 +1,12 @@
 import { Masonry } from "@mui/lab";
 import React, { useEffect, useState } from "react";
 import BasicCard from "../basicCard/BasicCard.tsx";
-import { Box, Stack } from "@mui/material";
+import { AppBar, Box, Stack } from "@mui/material";
+import Navbar from "./Appbar.tsx";
+import CircularProgress from '@mui/material/CircularProgress';
+
+
+
 type ApiStatus = "INITIAL" | "LOADING" | "SUCCESS" | "ERROR";
 
 export interface EachCardData {
@@ -37,17 +42,25 @@ const Home = () => {
     }
   };
   useEffect(() => {
+    console.log('apiStatus')
     getData();
   }, []);
   return (
+    <div>
+    {apiStatus === 'LOADING'  ? 
+     <Box sx={{height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+     <CircularProgress style={{color: '#865d36'}}/>
+ </Box>:
     <Stack style={{backgroundColor: '#3e362e', paddingTop: 10, paddingLeft: 10}}>
-
     <Masonry columns={{ xs: 1, sm: 2, lg: 3, xl: 4 }} spacing={3}>
       {data.slice(1).map((each) => (
         <BasicCard info={each} />
       ))}
     </Masonry>
       </Stack>
+     
+    }
+    </div>
   );
 };
 
